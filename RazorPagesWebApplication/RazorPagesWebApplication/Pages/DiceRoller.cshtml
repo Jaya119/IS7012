@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    int randomNumber = new Random().Next(1, 7); //GENERATES NUMBER BETWEEN 1 and 6
+    int winningNumber = 2;
+}
+
+<div class="text-center">
+    <h3 class="display-4">Welcome to Dice Roller example</h3>
+</div>
+<p class="text-center">The exercise tells us if the random generated number is our Winning Number or not.</p>
+<br />
+@if (randomNumber == winningNumber)
+{
+    <div class="text-center">
+        <p>Displays the Winning Number: @randomNumber</p><span>Message: </span><span class="bg-success">"We Won"</span>
+    </div>
+}
+else
+{
+    <div class="text-center">
+        <p>Displays the Losing Number: @randomNumber</p><span>Message: </span><span class="bg-danger">"We Lost"</span>
+    </div>
+}
+<p class="text-center">The exercise also tells us how far our Winning Number is from the Randome Number.</p>
