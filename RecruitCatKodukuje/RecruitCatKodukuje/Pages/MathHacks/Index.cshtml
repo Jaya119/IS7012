@@ -1,0 +1,81 @@
+﻿@page
+@model RecruitCatKodukuje.Pages.MathHacks.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Math Hack</h1>
+<p>
+    We are proud to announce that we are going to open a new branch in California next month.
+</p>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MathHack[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MathHack[0].OptionalStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MathHack[0].MinSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MathHack[0].MaxSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MathHack[0].Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MathHack[0].NumOfEmp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MathHack[0].ContactNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MathHack[0].Industry)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.MathHack) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OptionalStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinSalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxSalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumOfEmp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Industry.Name)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

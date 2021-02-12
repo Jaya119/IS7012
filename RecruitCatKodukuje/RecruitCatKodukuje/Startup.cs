@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,6 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using RecruitCatKodukuje.Data;
+using Gtt.Uc.EntityFramework;
 
 namespace RecruitCatKodukuje
 {
@@ -23,6 +26,8 @@ namespace RecruitCatKodukuje
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.AddGttMem<RecruitCatKodukujeContext>("ddac4010-5bf0-4b01-a7a4-9cdf36320565");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

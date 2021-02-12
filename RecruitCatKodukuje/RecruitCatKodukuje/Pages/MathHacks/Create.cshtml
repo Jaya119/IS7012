@@ -1,0 +1,68 @@
+﻿@page
+@model RecruitCatKodukuje.Pages.MathHacks.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create a new Math Hack data row</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MathHack.Name" class="control-label"></label>
+                <input asp-for="MathHack.Name" class="form-control" />
+                <span asp-validation-for="MathHack.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MathHack.OptionalStartDate" class="control-label"></label>
+                <input asp-for="MathHack.OptionalStartDate" class="form-control" />
+                <span asp-validation-for="MathHack.OptionalStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MathHack.MinSalary" class="control-label"></label>
+                <input asp-for="MathHack.MinSalary" class="form-control" />
+                <span asp-validation-for="MathHack.MinSalary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MathHack.MaxSalary" class="control-label"></label>
+                <input asp-for="MathHack.MaxSalary" class="form-control" />
+                <span asp-validation-for="MathHack.MaxSalary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MathHack.Location" class="control-label"></label>
+                <textarea asp-for="MathHack.Location" class="form-control" /></textarea>
+                <span asp-validation-for="MathHack.Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MathHack.NumOfEmp" class="control-label"></label>
+                <input asp-for="MathHack.NumOfEmp" class="form-control" />
+                <span asp-validation-for="MathHack.NumOfEmp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MathHack.ContactNum" class="control-label"></label>
+                <input asp-for="MathHack.ContactNum" class="form-control" />
+                <span asp-validation-for="MathHack.ContactNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MathHack.IndustryId" class="control-label"></label>
+                <select asp-for="MathHack.IndustryId" class ="form-control" asp-items="ViewBag.IndustryId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
