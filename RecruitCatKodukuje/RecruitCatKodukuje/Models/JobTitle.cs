@@ -8,7 +8,9 @@ namespace RecruitCatKodukuje.Models
 {
     public class JobTitle
     {
-        public int Id { get; set; }
+        public int Id { get; set; }    
+        
+        [DisplayName("Job Role")]
         public string Name { get; set; }
 
         [DisplayName("Minimum Salary")]

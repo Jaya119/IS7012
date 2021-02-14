@@ -10,7 +10,7 @@ namespace RecruitCatKodukuje.Models
     {
         public int Id { get; set; }
 
-        [DisplayName("Name")]
+        [DisplayName("Type")]
         public string Name { get; set; }
         public List<MathHack> MathHacks { get; set; }
         public List<Candidate> Candidates { get; set; }

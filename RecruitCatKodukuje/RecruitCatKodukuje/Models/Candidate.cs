@@ -12,15 +12,27 @@ namespace RecruitCatKodukuje.Models
         public int Id { get; set; }
 
         [DisplayName("First Name")]
+        [Required(ErrorMessage = "You need a first name")]
+        [StringLength(20)]
         public string FirstName { get; set; }
 
         [DisplayName("Last Name")]
+        [Required(ErrorMessage = "You need a last name")]
+        [StringLength(20)]
         public string LastName { get; set; }
+
         public int Age { get; set; }
 
         [DisplayName("Date of Birth")]
         [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
+
+        [DisplayName("SSN")]
+        [RegularExpression("^\\d{3}-?\\d{2}-?\\d{4}$", ErrorMessage = "Please enter a valid SSN")]
+        [StringLength(11, MinimumLength = 9, ErrorMessage = "Please enter a valid SSN")]
+        [Required(ErrorMessage = "Social Security Number is Required")]
+        public string SocialSecurityNumber { get; set; }
+
         public string Gender { get; set; }
 
         [DisplayName("Start Date")]
@@ -46,6 +58,17 @@ namespace RecruitCatKodukuje.Models
             get
             {
                 return $"{FirstName} {LastName}";
+            }
+        }
+       public string MaskedSocialSecurityNumber
+        {
+            get
+            {
+                if (SocialSecurityNumber?.Length < 4)
+                    {
+                    return SocialSecurityNumber;
+                    }
+                return "***-**-" + SocialSecurityNumber.Substring(SocialSecurityNumber.Length - 4, 4);
             }
         }
     }

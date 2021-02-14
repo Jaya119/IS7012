@@ -10,7 +10,7 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-<table class="table table-bordered">
+<table class="table">
     <thead>
         <tr>
             <th>
@@ -20,25 +20,22 @@
                 @Html.DisplayNameFor(model => model.Candidate[0].LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Candidate[0].Age)
+                @Html.DisplayNameFor(model => model.Candidate[0].DateOfBirth)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Candidate[0].DateOfBirth)
+                @Html.DisplayNameFor(model => model.Candidate[0].SocialSecurityNumber)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Candidate[0].Gender)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Candidate[0].OptionalStartDate)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Candidate[0].TargetSalary)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Candidate[0].WorkExp)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Candidate[0].MathHack)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Candidate[0].Industry)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Candidate[0].JobTitle)
@@ -56,25 +53,22 @@
                 @Html.DisplayFor(modelItem => item.LastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Age)
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DateOfBirth)
+                @Html.DisplayFor(modelItem => item.SocialSecurityNumber)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Gender)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.OptionalStartDate)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.TargetSalary)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.WorkExp)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.MathHack.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Industry.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.JobTitle.Name)
