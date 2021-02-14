@@ -61,6 +61,27 @@
         </dd>
     </dl>
 </div>
+
+<div>
+    <h2>Candidate Details</h2>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Candidate Name</th>
+                <th>DOB</th>
+                <th>Job title</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+    </table>
+    <ul>
+        @foreach (var Candidate in Model.MathHack.Candidates)
+        {
+            <li>@Candidate.FirstName - @Candidate.DateOfBirth - @Candidate.JobTitleId - @Candidate.TargetSalary </li>
+        }
+    </ul>
+
+</div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.MathHack.Id">Edit</a> |
     <a asp-page="./Index">Back to List</a>

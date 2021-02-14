@@ -29,7 +29,8 @@ namespace RecruitCatKodukuje.Pages.MathHacks
             }
 
             MathHack = await _context.MathHack
-                .Include(m => m.Industry).FirstOrDefaultAsync(m => m.Id == id);
+                .Include(m => m.Candidates)
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             if (MathHack == null)
             {
