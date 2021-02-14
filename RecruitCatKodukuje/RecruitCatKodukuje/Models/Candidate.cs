@@ -46,8 +46,11 @@ namespace RecruitCatKodukuje.Models
         public int? WorkExp { get; set; }
 
         [DisplayName("Math Hack")]
+        [StringLength(20)]
         public MathHack MathHack { get; set; }
         public int MathHackId { get; set; }
+
+        [StringLength(20)]
         public Industry Industry { get; set; }
         public int IndustryId { get; set; }
         public JobTitle JobTitle { get; set; }

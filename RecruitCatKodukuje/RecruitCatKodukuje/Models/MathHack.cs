@@ -21,6 +21,8 @@ namespace RecruitCatKodukuje.Models
 
         [DisplayName("Minimum Salary")]
         public decimal MaxSalary { get; set; }
+
+        [StringLength(20)]
         public string Location { get; set; }
 
         [DisplayName("Employee Count")]
